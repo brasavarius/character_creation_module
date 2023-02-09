@@ -2,43 +2,38 @@ from random import randint
 
 
 def attack(char_name, char_class):
-    attack_text = 'нанёс урон противнику равный'
+    damage = 0
     if char_class == 'warrior':
         damage = 5 + randint(3, 5)
-        return (f'{char_name} {attack_text} {damage}')
     if char_class == 'mage':
         damage = 5 + randint(5, 10)
-        return (f'{char_name} {attack_text} {damage}')
     if char_class == 'healer':
         damage = 5 + randint(5, 10)
-        return (f'{char_name} {attack_text} {damage}')
-    return (f'У {char_class} не предусмотрено атаки')
+    return (f'{char_name} нанёс урон противнику равный {damage}')
 
 
 def defence(char_name, char_class):
+    defence_p = 0
     if char_class == 'warrior':
         defence_p = 10 + randint(5, 10)
-        return (f'{char_name} блокировал {defence_p} урона')
     if char_class == 'mage':
         defence_p = 10 + randint(-2, 2)
-        return (f'{char_name} блокировал {defence_p} урона')
     if char_class == 'healer':
         defence_p = 10 + randint(2, 5)
-        return (f'{char_name} блокировал {defence_p} урона')
-    return (f'У {char_class} не предусмотрено защиты')
+    return (f'{char_name} блокировал {defence_p} урона')
 
 
 def special(char_name, char_class):
     special_text = 'применил специальное умение'
     if char_class == 'warrior':
         stamina = 80 + 25
-        return (f'{char_name} {special_text} «Выносливость {stamina}»')
+        return (f'{char_name} {special_text} «Выносливость» {stamina}')
     if char_class == 'mage':
         attack_p = 5 + 40
-        return (f'{char_name} {special_text} «Атака {attack_p}»')
+        return (f'{char_name} {special_text} «Атака» {attack_p}')
     if char_class == 'healer':
         defence_p = 10 + 30
-        return (f'{char_name} {special_text} «Защита {defence_p}»')
+        return (f'{char_name} {special_text} «Защита» {defence_p}')
     return (f'У {char_class} не предусмотрено специальных умений')
 
 
